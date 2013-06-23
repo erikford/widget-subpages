@@ -126,7 +126,7 @@ class wap8_Subpages_Widget extends WP_Widget {
 		
 		global $post;
 		
-		if ( is_page() && wap8_has_children( $post->ID ) == '1' || wap8_has_siblings( $post->ID ) == '1' ) {
+		if ( is_page() && wap8_has_children( $post->ID ) == '1' || wap8_has_siblings() == '1' ) {
 		
 			extract( $args );
 			
