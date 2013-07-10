@@ -69,16 +69,20 @@ function wap8_has_children( $id ) {
 
 function wap8_has_siblings() {
 	
-	global $post;
-	
-	if ( $post->post_parent ) {
+	if ( is_page() ) {
 		
-		$siblings = get_pages( 'child_of=' . $post->post_parent );
-		
-		if ( count( $siblings ) > 0 ) {
-			return '1';
+		global $post;
+
+		if ( $post->post_parent ) {
+
+			$siblings = get_pages( 'child_of=' . $post->post_parent );
+
+			if ( count( $siblings ) > 0 ) {
+				return '1';
+			}
+
 		}
-	
+		
 	}
 	
 }
